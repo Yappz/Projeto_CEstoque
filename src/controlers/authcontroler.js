@@ -12,8 +12,12 @@ const router = express.Router();
 retornando algum erro caso haja algum erro no cadastro de novo usuário. */
 
 router.post('/register' , async (req, res) => {
+    const { email } = req.body;
  
     try{
+        if(await User.findOne({ email }))
+           return res.send(400).send({error: 'User alredy exist'})
+        
     const user = await User.create(req.body);
     
     return res.send ({ user });
