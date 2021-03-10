@@ -8,7 +8,7 @@ const User = require ('../models/user');
 
 const router = express.Router();
 
-/* Assim que o usuário chamar essa rota, um usuário sera criado inserindo todos os paramentros em re.body
+/* Assim que o usuário chamar essa rota, um usuário sera criado inserindo todos os paramentros em req.body
 retornando algum erro caso haja algum erro no cadastro de novo usuário. */
 
 router.post('/register' , async (req, res) => {
